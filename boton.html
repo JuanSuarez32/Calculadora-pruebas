@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+    <p id="formula"></p>
+    <button class="boton" value="0">0</button>
+    <button class="boton" value="1">1</button>
+    <button class="boton" value="2">2</button>
+    <button class="boton" value="3">3</button>
+    <button class="boton" value="4">4</button>
+    <button class="boton" value="5">5</button>
+    <button class="boton" value="6">6</button>
+    <button class="boton" value="7">7</button>
+    <button class="boton" value="8">8</button>
+    <button class="boton" value="9">9</button>
+    <button class="boton" value="+">+</button>
+    <button class="boton" value="=">=</button>
+    <button class="boton" value="*">x</button>
+    <button class="boton" value="clear">clr</button>
+    <script>
+        const botones = document.querySelectorAll('.boton')
+        botones.forEach(function (boton) {
+            boton.addEventListener('click', (e) => {
+                if (boton.value == '=') {
+                    const resultado = eval(formula.innerText)
+                    console.log(resultado)
+                    return
+                }
+                if (boton.value == 'clear') {
+                    formula.innerText = ''
+                    return
+                }
+                console.log(boton.value == '=')
+                formula.innerText = formula.innerText + boton.value
+            
+            })
+        })
+        const formula = document.getElementById('formula')
+        console.log(formula);
+    </script>
+</body>
+
+</html>
